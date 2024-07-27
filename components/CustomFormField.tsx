@@ -11,8 +11,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectTrigger, SelectValue } from "./ui/select";
-import { Checkbox } from "@/components/ui/checkbox"
-
+import { Checkbox } from "@/components/ui/checkbox";
 
 import { Control } from "react-hook-form";
 
@@ -137,22 +136,22 @@ const RenderField = ({ field, props }: { field: any; props: CustomProps }) => {
             disabled={props.disabled}
           />
         </FormControl>
-      )
+      );
     case FormFieldType.CHECKBOX:
       return (
         <FormControl>
           <div className="flex items-center gap-4">
-          <Checkbox 
-            id={props.name}
-            checked={field.value}
-            onChange={field.onChange}
-          />
-        <label htmlFor={props.name} className="checkbox-label">
-          {props.label}
-        </label>
+            <Checkbox
+              id={props.name}
+              checked={field.value}
+              onCheckedChange={field.onChange}
+            />
+            <label htmlFor={props.name} className="checkbox-label">
+              {props.label}
+            </label>
           </div>
         </FormControl>
-      )
+      );   
     default:
       break;
   }
